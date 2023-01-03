@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        #area{
+            font: normal 15pt arial;
+            background-color: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"> Interaja...</div>
+    <!--<div id="area2">Outra div</div>-->
+
+    <script>
+        var a = window.document.getElementById('area') //Se aplica para todos//
+        function clicar(){
+            a.innerText = 'Você clicou'
+            a.style.background = 'red'
+        }
+        function entrar(){
+            a.innerText = 'Entrou'
+            a.style.background = 'green'
+        }
+        function sair(){
+            a.innerText = 'Saiu'
+            a.style.background = 'green'
+        }
+
+        /*var b = window.document.getElementById('area2')
+        b.addEventListener('click', clicar)
+        b.addEventListener('mouseenter', entrar)
+        b.addEventListener('mouseout', sair)
+
+        function clicar(){
+            b.innerText = 'Você clicou'
+            b.style.background = 'red'
+        }
+        function entrar(){
+            b.innerText = 'Entrou'
+            b.style.background = 'green'
+        }
+        function sair(){
+            b.innerText = 'Saiu'
+            b.style.background = 'green'
+        } */
+
+
+    </script>
+    
+</body>
+</html>
