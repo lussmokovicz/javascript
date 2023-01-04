@@ -3,7 +3,7 @@ function verificar(){
     var ano = data.getFullYear()
     var fano = window.document.getElementById('txtano')
     var res = window.document.getElementById('res')
-    if (fano.value.length == 0 ||Number(fano.value) > ano){
+    if (fano.value.length == 0 || Number(fano.value) > ano){
         window.alert('[ERRO] Verifique seus dados e tente novamente.')
     } else{
         var fsex = document.getElementsByName('sex')
@@ -12,35 +12,27 @@ function verificar(){
         if(fsex[0].checked){
             gênero = 'homem'
             if( idade >= 0 && idade < 10){
-                img.src = 'imagens/menino.jpg'
+                img.src = 'imagens/menino.png'
             } else if (idade < 21){
-                img.src = 'imagens/moco.jpg'
+                img.src = 'imagens/moco.png'
             } else if (idade <=60) {
-                img.src = 'imagens/homi.jpg'
+                img.src = 'imagens/homi.png'
             } else{
-                img.src = 'imagens/vozinho.jpg'
+                img.src = 'imagens/vozinho.png'
             }
         } else if(fsex[1].checked){
             gênero = 'mulher'
             if( idade >= 0 && idade < 10){
-                img.src = 'imagens/menina.jpg'
+                img.src = 'imagens/menina.png'
             } else if (idade < 21){
-                img.src = 'imagens/moca.jpg'
+                img.src = 'imagens/moca.png'
             } else if (idade <=60) {
-                img.src = 'imagens/muie.jpg'
+                img.src = 'imagens/muie.png'
             } else{
-                img.src = 'imagens/vozinha.jpg'
+                img.src = 'imagens/vozinha.png'
             }
         }
     }
-
-
-
-
-
-
-
-
 res.style.textAlign = 'center'
 res.innerHTML = `Detectamos ${gênero} com idade de ${idade} anos.`
   
