@@ -1,0 +1,47 @@
+@charset "UTF-8";
+body{
+    background-color: #cc93fa;
+    font: normal 12pt Arial;
+    color: white;
+    text-align: center;
+
+}
+header, footer{
+    text-shadow: 1px 1px 3px #00000070;
+}
+section{
+    color: black;
+    padding: 16px;
+    width: 500px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 4px 6px 16px #00000079;
+    margin: auto;
+
+}
+div{
+    text-align: start;
+    padding-left: 8px;
+    padding: 10px;
+}
+input{
+    padding: 10px;
+    background-color: #e3c3fd;
+    border: 0 none;
+    border-radius: 5px;
+}
+input[type=button]{
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+input[type=button]:hover{
+    box-shadow: 0px 0px 4px #e6cbfdda;
+}
+select{
+    display: block;
+    margin: auto;
+    width: 180px;
+    height: 180px;
+}
