@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style001.css">
+</head>
+<body>
+    <div class="corpo">
+        <div class="visor">
+            <div>
+                <p id="resultado"></p>
+            </div>
+        </div>
+        <div class="teclas">
+            <div id="extend" class="bottom" onclick="clean()">C</div>
+            <div class="bottom" onclick="back()">B</div>
+            <div class="bottom" onclick="insert('/')">/</div>
+            <div class="bottom" onclick="insert('7')">7</div>
+            <div class="bottom" onclick="insert('8')">8</div>
+            <div class="bottom" onclick="insert('9')">9</div>
+            <div class="bottom" onclick="insert('*')">*</div>
+            <div class="bottom" onclick="insert('4')">4</div>
+            <div class="bottom" onclick="insert('5')">5</div>
+            <div class="bottom" onclick="insert('6')">6</div>
+            <div class="bottom" onclick="insert('-')">-</div>
+            <div class="bottom" onclick="insert('1')">1</div>
+            <div class="bottom" onclick="insert('2')">2</div>
+            <div class="bottom" onclick="insert('3')">3</div>
+            <div class="bottom" onclick="insert('+')">+</div>
+            <div id="extend" class="bottom" onclick="insert('0')">0</div>
+            <div class="bottom" onclick="insert(',')">,</div>
+            <div class="bottom" onclick="calcular()">=</div>
+        </div>
+    </div>
+    <script src="script001.js"></script>
+    
+</body>
+</html>
