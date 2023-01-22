@@ -20,9 +20,13 @@
       margin-top: 20px;
       margin-bottom: 16px;
     }
+    p.condicao{
+      font-size: 1.1em;
+
+    }
 
     div.container{
-      height: 300px;
+      height: 400px;
       width: 500px;
       border-radius: 20px;
       box-shadow: 0px 0px 20px #0000003f;
@@ -33,11 +37,15 @@
     }
     div.container input{
       padding: 8px;
+      width: 40%;
       margin: 10px;
       background-color: #e0fcb4;
       border: none;
       border-radius: 5px;
       font-size: 1.1em;
+    }
+    div.container #expr{
+      font-size: 1em;
     }
     div.container input:focus{
       border: transparent;
@@ -45,6 +53,7 @@
     }
     input[type="submit"]{
       cursor: pointer;
+      width: 20%;
     }
     div.res{
       width: 100%;
@@ -54,8 +63,11 @@
 </head>
 <body>
   <h1>Encontre as raízes da expressão</h1>
-  <p class="condicao">Formato considerado: ax<sup>2</sup>+bx+c</p>
+  <p class="condicao">Formato considerado: <strong>A</strong>X<sup>2</sup>+<strong>B</strong>X+<strong>C</strong></p>
   <div class="container">
+    <p>
+      <label for="expr">Expressão:</label><input type="text" name="expressao" id="expr">
+    </p>
     <p>
       <label for="numa">Valor de a:</label>
       <input type="number" name="a" id="numa">
@@ -77,14 +89,46 @@
   <script>
     
     function encontrar(){
+      var expr = document.querySelector('#expr')
+      var txtexpr = String(expr.value)
       var a = document.getElementById('numa')
-      var n1 = Number(a.value)
+      var na = Number(a.value)
+      var b = document.getElementById('numb')
+      var nb = Number(b.value)
+      var c = document.getElementById('numc')
+      var nc = Number(c.value) 
       var res = window.document.querySelector('.res')
-      res.innerText = n1
-      
-      
-      
+      if(na==0){
+        var x = -nc/nb
+        res.innerHTML = `O valor de x da expressão ${txtexpr} é de ${x}.`
+      } else if(nb==0){
+        var x1 = Math.sqrt(-nc/na)
+        var x2 = -Math.sqrt(-nc/na)
+        res.innerHTML = `Os valores de x da expressão ${txtexpr} são ${x1} e ${x2}.`
+      } else if(nc==0){
+        var x1 = 0
+        var x2 = -nb/na
+        res.innerHTML = `Os valores de x da expressão  ${txtexpr}  são ${x1} e ${x2}.`
+      } else if(nb==0 && nc==0){
+        var x = 0
+        res.innerHTML = `O valor de x da expressão ${txtexpr} é de ${x}.`
+      } else if(na==0 && nc==0){
+        var x = 0
+        res.innerHTML = `O valor de x da expressão ${txtexpr} é de ${x}.`
+      } else if(na!==0 && nb!==0 && nc!==0){
+        var delta = nb**2-(4*na*nc)
+        var x1 = (-nb+Math.sqrt(delta))/(2*na)
+        var x2 = (-nb-Math.sqrt(delta))/(2*na)
+        res.innerHTML = `Os valores de x da expressão  ${txtexpr}  são ${x1} e ${x2}.`
+      } 
     }
+    var expr = document.querySelector('#expr')
+    expr.focus()
+    var input = document.createElement('input')
+    var button = document.createTextNode('Nova expressão')
+    input.appendChild(button)
+
+
 
   </script>
   
